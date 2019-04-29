@@ -1,0 +1,33 @@
+{
+  "name": "hapi-graphql-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Rocky Jaiswal",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "serve": "node dist/server.js",
+    "watch-ts": "tsc -w",
+    "watch-node": "npx nodemon dist/server.js",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Nodemon\" -c \"yellow.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\""
+  },
+  "devDependencies": {
+    "@types/hapi": "^18.0.2",
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.11",
+    "standard": "^12.0.1",
+    "tslint": "^5.16.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.4.5"
+  },
+  "standard": {
+    "parser": "typescript-eslint-parser",
+    "plugins": [
+      "typescript"
+    ]
+  },
+  "dependencies": {
+    "hapi": "^18.1.0"
+  }
+}
