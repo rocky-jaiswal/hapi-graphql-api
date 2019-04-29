@@ -2,12 +2,15 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es2018",
+    "lib": ["es2018", "esnext.asynciterable"],
     "moduleResolution": "node",
     "esModuleInterop": true,
     "noImplicitAny": true,
     "sourceMap": true,
     "outDir": "dist",
     "baseUrl": "src/",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "paths": {
       "*": [
         "node_modules/*",
