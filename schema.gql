@@ -3,6 +3,10 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+type Greeting {
+  response: String!
+}
+
 type Query {
-  greet: String
+  greet(to: String!): Greeting
 }
