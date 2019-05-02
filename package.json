@@ -15,6 +15,7 @@
   "devDependencies": {
     "@types/graphql": "^14.2.0",
     "@types/hapi": "^18.0.2",
+    "@types/jsonwebtoken": "^8.3.2",
     "concurrently": "^4.1.0",
     "nodemon": "^1.18.11",
     "standard": "^12.0.1",
@@ -33,6 +34,8 @@
     "apollo-server-hapi": "^2.4.8",
     "graphql": "^14.2.1",
     "hapi": "^18.1.0",
+    "hapi-auth-jwt2": "^8.4.0",
+    "jsonwebtoken": "^8.5.1",
     "reflect-metadata": "^0.1.13",
     "type-graphql": "^0.17.3"
   }
