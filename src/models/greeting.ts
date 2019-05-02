@@ -14,7 +14,6 @@ class Greeting {
 export default class GreetingResolver {
   @Query(returns => Greeting, { nullable: true })
   greet (@Arg('to', { nullable: false }) to: string): Greeting {
-    const g = new Greeting(`Hello, ${to}!`);
-    return g;
+    return new Greeting(`Hello, ${to}!`);
   }
 }

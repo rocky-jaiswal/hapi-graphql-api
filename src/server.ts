@@ -13,26 +13,26 @@ const init = async () => {
     host: 'localhost'
   });
 
+  // JWT plugin setup
   await server.register(require('hapi-auth-jwt2'));
-
   server.auth.strategy('jwt', 'jwt', {
     key: SECRET,
     validate: validateToken,
-    verifyOptions: { algorithms: [ 'HS256' ] }
+    verifyOptions: { algorithms: ['HS256'] }
   });
-
   server.auth.default('jwt');
 
+  // GraphQL setup
   const schema = await bootstrapSchema();
   const apolloServer = new ApolloServer({
     schema,
     playground: true
   });
-
   await apolloServer.applyMiddleware({
     app: server
   });
 
+  // Standard routes
   server.route(routes);
 
   await server.start();
