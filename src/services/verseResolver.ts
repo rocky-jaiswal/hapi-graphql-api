@@ -6,8 +6,7 @@ import Verse from '../models/verse';
 class VerseResolver {
   @Query(returns => [Verse], { nullable: true })
   async getVersesForBookAndChapter (@Arg('book', { nullable: false }) book: string, @Arg('chapter', { nullable: false }) chapter: number): Promise<Verse[]> {
-    const verses = await getVersesFromDBForBookAndChapter(book, chapter);
-    return verses;
+    return getVersesFromDBForBookAndChapter(book, chapter);
   }
 }
 

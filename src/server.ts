@@ -9,8 +9,9 @@ import { SECRET, validateToken } from './models/authentication';
 const init = async () => {
 
   const server = new Hapi.Server({
-    port: 3000,
-    host: 'localhost'
+    port: 8080,
+    host: 'localhost',
+    routes: { cors: { origin: ['http://localhost:3000'] } }
   });
 
   // JWT plugin setup
