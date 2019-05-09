@@ -3,19 +3,19 @@ import { Field, ObjectType } from 'type-graphql';
 @ObjectType()
 class Verse {
   @Field()
-  book: string;
+  book!: string;
 
   @Field()
-  chapter: number;
+  chapter!: number;
 
   @Field()
-  verse: number;
+  verse!: number;
 
   @Field()
-  text: string;
+  text!: string;
 
   @Field()
-  language: string;
+  language!: string;
 }
 
 export default Verse;

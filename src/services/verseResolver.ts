@@ -5,7 +5,10 @@ import Verse from '../models/verse';
 @Resolver()
 class VerseResolver {
   @Query(returns => [Verse], { nullable: true })
-  async getVersesForBookAndChapter (@Arg('book', { nullable: false }) book: string, @Arg('chapter', { nullable: false }) chapter: number): Promise<Verse[]> {
+  async getVersesForBookAndChapter (
+    @Arg('book', { nullable: false }) book: string,
+    @Arg('chapter', { nullable: false }) chapter: number
+  ): Promise<Verse[]> {
     return getVersesFromDBForBookAndChapter(book, chapter);
   }
 }

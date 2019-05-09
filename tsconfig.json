@@ -4,6 +4,7 @@
     "target": "es2018",
     "lib": ["es2018", "esnext.asynciterable"],
     "moduleResolution": "node",
+    "strict": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
     "sourceMap": true,
