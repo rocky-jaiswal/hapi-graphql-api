@@ -8,14 +8,16 @@ type Greeting {
 }
 
 type Query {
-  greet(to: String!): Greeting
-  getVersesForBookAndChapter(chapter: Float!, book: String!): [Verse!]
+  greeting(to: String!): Greeting
+  verses(chapter: Float!, book: String!): [Verse!]
+  books: [String!]
+  chapters(book: String!): Int
 }
 
 type Verse {
   book: String!
   chapter: Float!
-  verse: Float!
+  verseNumber: Float!
   text: String!
   language: String!
 }

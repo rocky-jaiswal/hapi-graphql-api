@@ -4,7 +4,7 @@ import Greeting from '../models/greeting';
 @Resolver()
 class GreetingResolver {
   @Query(returns => Greeting, { nullable: true })
-  greet (@Arg('to', { nullable: false }) to: string): Greeting {
+  greeting (@Arg('to', { nullable: false }) to: string): Greeting {
     return new Greeting(`Hello, ${to}!`);
   }
 }

@@ -1,8 +1,8 @@
 import * as JWT from 'jsonwebtoken';
 import * as Crypto from 'crypto';
 
-export const SECRET = Crypto.randomBytes(512).toString('hex');
-const DUMMY_ID = Crypto.randomBytes(256).toString('hex');
+export const SECRET = process.env['NODE_ENV'] === 'production' ? Crypto.randomBytes(512).toString('hex') : 'SECRET';
+const DUMMY_ID = process.env['NODE_ENV'] === 'production' ? Crypto.randomBytes(256).toString('hex') : '101';
 
 export const createToken = () => {
   return JWT.sign({ id: DUMMY_ID }, SECRET);
