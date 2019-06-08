@@ -1,6 +1,7 @@
 import { Query, Resolver, Int, Arg } from 'type-graphql';
 
-import { getBooks, getChaptersForBook } from '../repositories/book';
+import { getBooks, getChaptersForBook, getBooksAndChapterCount } from '../repositories/book';
+import BookAndChapterCount from '../models/bookAndChapterCount';
 
 @Resolver()
 class BookResolver {
@@ -9,6 +10,12 @@ class BookResolver {
   async books (): Promise<String[]> {
     const books = await getBooks();
     return books;
+  }
+
+  @Query(returns => [BookAndChapterCount], { nullable: true })
+  async getAllBooksAndChapters (): Promise<BookAndChapterCount[]> {
+    const data = await getBooksAndChapterCount();
+    return data;
   }
 
   @Query(returns => Int, { nullable: true })

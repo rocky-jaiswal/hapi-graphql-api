@@ -1,11 +1,19 @@
 import DB from './db';
+import BookAndChapterCount from '../models/bookAndChapterCount';
+
+export const getBooksAndChapterCount = async (): Promise<BookAndChapterCount[]> => {
+  const books = await getBooks();
+  const maxChapters = await Promise.all(books.map((book: string) => DB('verses').where({ book }).max('chapter')));
+  const chapterCounts = maxChapters.map((m: any) => Object.values(m[0])[0]);
+  return books.map((book: string, i: number) => (new BookAndChapterCount(book, chapterCounts[i] as number)));
+};
 
 export const getChaptersForBook = async (book: string): Promise<{[key: string]: number}[]> => {
   return DB('verses').where({ book }).max('chapter');
 };
 
 export const getBooks = async (): Promise<string[]> => {
-  // return DB('verses').distinct('book');
+  // const books = await DB('verses').distinct('book');
   return [
     'Gen',
     'Exod',

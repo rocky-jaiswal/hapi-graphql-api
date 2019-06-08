@@ -3,6 +3,11 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+type BookAndChapterCount {
+  book: String!
+  chapterCount: Float!
+}
+
 type Greeting {
   response: String!
 }
@@ -11,6 +16,7 @@ type Query {
   greeting(to: String!): Greeting
   verses(chapter: Float!, book: String!): [Verse!]
   books: [String!]
+  getAllBooksAndChapters: [BookAndChapterCount!]
   chapters(book: String!): Int
 }
 
