@@ -10,7 +10,7 @@ const init = async () => {
 
   const server = new Hapi.Server({
     port: 8080,
-    routes: { cors: { origin: ['http://localhost:3000', 'https://bible-neu.firebaseapp.com'] } }
+    routes: { cors: { origin: ['http://localhost:3000', 'https://bible-neu.firebaseapp.com', 'https://bible-neu.web.app'] } }
   });
 
   // JWT plugin setup
