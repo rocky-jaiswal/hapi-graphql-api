@@ -38,7 +38,7 @@
     "hapi": "^18.1.0",
     "hapi-auth-jwt2": "^8.4.0",
     "jsonwebtoken": "^8.5.1",
-    "knex": "^0.16.5",
+    "knex": "^0.19.5",
     "reflect-metadata": "^0.1.13",
     "sqlite3": "^4.0.6",
     "type-graphql": "^0.17.3"
