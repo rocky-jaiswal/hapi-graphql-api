@@ -1,13 +1,13 @@
-import { Field, ObjectType } from 'type-graphql';
+import { Field, ObjectType } from 'type-graphql'
 
 @ObjectType()
 class Greeting {
   @Field()
-  response: string;
+  response: string
 
-  constructor (response: string) {
-    this.response = response;
+  constructor(response: string) {
+    this.response = response
   }
 }
 
-export default Greeting;
+export default Greeting

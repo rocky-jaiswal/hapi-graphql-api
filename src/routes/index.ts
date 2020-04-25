@@ -1,5 +1,6 @@
-import * as Hapi from 'hapi';
-import { createToken } from '../models/authentication';
+// eslint-disable-next-line no-unused-vars
+import * as Hapi from '@hapi/hapi'
+import { createToken } from '../models/authentication'
 
 const routes = [
   {
@@ -7,17 +8,17 @@ const routes = [
     path: '/',
     config: { auth: false },
     handler: (request: Hapi.Request, h: Hapi.ResponseToolkit) => {
-      return { healthy: true };
-    }
+      return { healthy: true }
+    },
   },
   {
     method: 'POST',
     path: '/session',
     config: { auth: false },
     handler: (request: Hapi.Request, h: Hapi.ResponseToolkit) => {
-      return { token: createToken() };
-    }
-  }
-];
+      return { token: createToken() }
+    },
+  },
+]
 
-export default routes;
+export default routes

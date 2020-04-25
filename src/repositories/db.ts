@@ -1,4 +1,4 @@
-const config = require('../../knexfile');
-import Knex from 'knex';
+import Knex from 'knex'
+const config = require('../../knexfile')
 
-export default Knex(config);
+export default Knex(config)

@@ -1,30 +1,29 @@
-import { Field, ObjectType } from 'type-graphql';
+import { Field, ObjectType } from 'type-graphql'
 
 @ObjectType()
 class Verse {
-
-  constructor (book: string, chapter: number, verseNumber: number, text: string, language: string) {
-    this.book = book;
-    this.chapter = chapter;
-    this.verseNumber = verseNumber;
-    this.text = text;
-    this.language = language;
+  constructor(book: string, chapter: number, verseNumber: number, text: string, language: string) {
+    this.book = book
+    this.chapter = chapter
+    this.verseNumber = verseNumber
+    this.text = text
+    this.language = language
   }
 
   @Field()
-  book!: string;
+  book!: string
 
   @Field()
-  chapter!: number;
+  chapter!: number
 
   @Field()
-  verseNumber!: number;
+  verseNumber!: number
 
   @Field()
-  text!: string;
+  text!: string
 
   @Field()
-  language!: string;
+  language!: string
 }
 
-export default Verse;
+export default Verse

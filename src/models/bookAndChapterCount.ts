@@ -1,18 +1,17 @@
-import { Field, ObjectType } from 'type-graphql';
+import { Field, ObjectType } from 'type-graphql'
 
 @ObjectType()
 class BookAndChapterCount {
-
-  constructor (book: string, chapterCount: number) {
-    this.book = book;
-    this.chapterCount = chapterCount;
+  constructor(book: string, chapterCount: number) {
+    this.book = book
+    this.chapterCount = chapterCount
   }
 
   @Field()
-  book!: string;
+  book!: string
 
   @Field()
-  chapterCount!: number;
+  chapterCount!: number
 }
 
-export default BookAndChapterCount;
+export default BookAndChapterCount
